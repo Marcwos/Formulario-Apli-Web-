@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Ingrese sus datos</h2>
+        <form method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ej. Maria Julieta" required>
+
+            <label for="apellido">Apellidos:</label>
+            <input type="text" name="apellido" id="apellido" placeholder="Ej. Garcia Plazo" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Ej. ejemplo@gmail.com" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" id="direccion" placeholder="Ciudad y calle" required>
+
+            <label for="cedula">Cédula:</label>
+            <input type="text" name="cedula" id="cedula" placeholder="Ej. 1234567890" " title="Solo números, entre 6 y 12 dígitos" required>
+
+            <label for="discapcidad">Discapacidad</label>
+            <div class="seleccion_check">
+                si<input type="checkbox">
+                no<input type="checkbox">
+            </div>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono" id="telefono" placeholder="Ej. 0991234567" title="Solo números, entre 7 y 10 dígitos" required>
+
+            <label for="ingresos">Ingresos Mensuales:</label>
+            <input type="number" name="ingresos" id="ingresos" placeholder="Ej. 800" required>
+
+            <hr>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
