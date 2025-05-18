@@ -1,45 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevenir envío hasta validar
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); 
 
-        const nombre = document.getElementById("nombre").value.trim();
-        const apellido = document.getElementById("apellido").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const direccion = document.getElementById("direccion").value.trim();
-        const cedula = document.getElementById("cedula").value.trim();
-        const telefono = document.getElementById("telefono").value.trim();
-        const ingresos = document.getElementById("ingresos").value.trim();
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const email = document.getElementById("email").value;
+    const direccion = document.getElementById("direccion").value;
+    const cedula = document.getElementById("cedula").value;
+    const telefono = document.getElementById("telefono").value;
+    const ingresos = document.getElementById("ingresos").value;
 
-        if (nombre === "") 
-            return alert("Por favor, ingrese su nombre.");
-        if (apellido === "") 
-            return alert("Por favor, ingrese su apellido.");
-        if (email === "" || !email.includes("@")) 
-            return alert("Ingrese un correo electrónico válido.");
-        if (direccion === "") 
-            return alert("Por favor, ingrese su dirección.");
-        
-        if (!/^\d{6,12}$/.test(cedula)) {
-            return alert("La cédula debe contener entre 6 y 12 dígitos numéricos.");
-        }
+    if (nombre === "") {
+      alert("Escribe tu nombre.");
+      return;
+    }
 
-        if (!/^\d{7,10}$/.test(telefono)) {
-            return alert("El teléfono debe contener entre 7 y 10 dígitos numéricos.");
-        }
+    if (apellido === "") {
+      alert("Escribe tu apellido.");
+      return;
+    }
 
-        if (ingresos === "" || isNaN(ingresos) || ingresos <= 0) {
-            return alert("Por favor, ingrese un valor válido de ingresos.");
-        }
+    if (!(/\w+([-+.’]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/).test(email)) {
+        alert("Escribe un correo válido.");
+        return;
+    }
 
-        const checkboxes = document.querySelectorAll(".seleccion_check input[type='checkbox']");
-        const seleccionados = Array.from(checkboxes).filter(chk => chk.checked);
-        if (seleccionados.length !== 1) {
-            return alert("Por favor, seleccione solo una opción para discapacidad (sí o no).");
-        }
+    if (direccion === "") {
+      alert("Escribe tu dirección.");
+      return;
+    }
 
-        alert("Formulario enviado correctamente.");
-        form.submit();
-    });
+    if (!/^\d{10}$/.test(cedula)) {
+        alert("La cedula debe tener 10 numeros.");
+        return;
+    }
+
+    if (/^\d{10}$/.test(telefono)) {
+      alert("La cedula debe tener 10 numero.");
+      return;
+    }
+
+    if (ingresos === "" || isNaN(ingresos) || ingresos <= 0) {
+      alert("Pon un ingreso valido.");
+      return;
+    }
+
+    alert("¡Formulario listo para enviar!");
+    form.submit();
+  });
 });

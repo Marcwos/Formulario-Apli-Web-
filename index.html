@@ -23,16 +23,20 @@
             <input type="text" name="direccion" id="direccion" placeholder="Ciudad y calle" required>
 
             <label for="cedula">Cédula:</label>
-            <input type="text" name="cedula" id="cedula" placeholder="Ej. 1234567890" " title="Solo números, entre 6 y 12 dígitos" required>
+            <input type="number" name="cedula" id="cedula" maxlength="10" placeholder="Ej. 1234567890" " title="Solo números, entre 6 y 12 dígitos" required>
 
             <label for="discapcidad">Discapacidad</label>
-            <div class="seleccion_check">
-                si<input type="checkbox">
-                no<input type="checkbox">
-            </div>
+
+            <label>
+            <input type="radio" name="discapacidad" value="si" id="radio_si"> Si
+            </label>
+
+            <label>
+            <input type="radio" name="discapacidad" value="no" id="radio_no"> No
+            </label>
 
             <label for="telefono">Teléfono:</label>
-            <input type="tel" name="telefono" id="telefono" placeholder="Ej. 0991234567" title="Solo números, entre 7 y 10 dígitos" required>
+            <input type="number" name="telefono" id="telefono" maxlength="10" placeholder="Ej. 0991234567" title="Solo números, entre 7 y 10 dígitos" required>
 
             <label for="ingresos">Ingresos Mensuales:</label>
             <input type="number" name="ingresos" id="ingresos" placeholder="Ej. 800" required>
